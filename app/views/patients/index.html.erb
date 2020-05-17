@@ -1,11 +1,12 @@
 
 <h1>Listing Patients</h1>
- 
+ <%= link_to 'Add New Patient', new_patient_path %>
+
 <table>
   <tr>
     <th>First Name</th>
     <th>Last Name</th>
-    <th></th>
+    <th colspan="3"></th>
   </tr>
  
   <% @patients.each do |patient| %>
@@ -13,6 +14,10 @@
       <td><%= patient.first_Name %></td>
       <td><%= patient.last_Name %></td>
       <td><%= link_to 'Show', patient_path(patient) %></td>
+      <td><%= link_to 'Edit', edit_patient_path(patient) %></td>
+      <td><%= link_to 'Delete', patient_path(patient), 
+                    method: :delete,
+                    data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
 </table>

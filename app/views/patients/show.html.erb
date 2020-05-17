@@ -8,3 +8,13 @@
     <strong>Last name:</strong>
     <%= @patient.last_Name %>
 </p>
+
+<h2>Notes</h2>    
+<%= render @patient.notes %>
+
+
+<h2> Add a note: </h2>
+<%= render 'notes/form' %>
+
+<%= link_to 'Edit', edit_patient_path(@patient) %> |
+<%= link_to 'Back', patients_path %>

@@ -1,0 +1,14 @@
+<%= form_with model: [ @patient, @patient.notes.build ], local: true do |form| %>
+    <p>
+        <%= form.label :title%>
+        <%= form.text_field :title%>
+    </p>
+
+    <p>
+        <%= form.label :body%>
+        <%= form.text_area :body%>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<%end%>

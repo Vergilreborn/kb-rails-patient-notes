@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
+
   get 'emr/index'
 
   resources :patients
+
+  resources :patient do
+    resources :notes
+  end
 
   root 'emr#index'
 
