@@ -1,20 +1,16 @@
-<h1>Patient</h1>
-<p>
-    <strong>First name:</strong>
-    <%= @patient.first_Name %>
-</p>
+<h1>Patient Details </h1>
+<div style="margin-left:10px">
+    <b>First name:</b> <%= @patient.first_Name %>
+    <br/>
+    <b>Last name:</b> <%= @patient.last_Name %>
 
-<p>
-    <strong>Last name:</strong>
-    <%= @patient.last_Name %>
-</p>
-
+</div>
+    (<%= link_to 'Edit', edit_patient_path(@patient) %> |
+    <%= link_to 'Back', patients_path %>)
 <h2>Notes</h2>    
-<%= render @patient.notes %>
+<%= render @patient.notes%>
 
 
 <h2> Add a note: </h2>
 <%= render 'notes/form' %>
 
-<%= link_to 'Edit', edit_patient_path(@patient) %> |
-<%= link_to 'Back', patients_path %>

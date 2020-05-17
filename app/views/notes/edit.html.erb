@@ -1,0 +1,37 @@
+<h1> Edit Note</h1>
+
+<%= form_with model: [ @patient, @note ], local: true do |form| %>
+
+    <% if @note.errors.any? %>
+      <div id="error_explanation">
+        <h2>
+          <%= pluralize(@note.errors.count, "error") %> prohibited
+          this patient from being saved:
+        </h2>
+        <ul>
+          <% @note.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+  
+
+    <p>
+        <%= form.label :title%>
+        <%= form.text_field :title%>
+    </p>
+
+    <p>
+        <%= form.label :body%>
+        <%= form.text_area :body%>
+    </p>
+    <p>
+        <%= form.submit %>
+    </p>
+<%end%>
+
+<%= link_to 'Back to Patient', patient_path(@patient) %> |
+ 
+
+
